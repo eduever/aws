@@ -1,0 +1,3 @@
+# As we are developing in sandbox folder run these cmds first to setup environment.
+npm init
+npm install aws-sdk --save
