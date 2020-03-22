@@ -1,0 +1,22 @@
+regions:
+  - global
+
+account-blacklist:
+  - "999999999999" # production
+
+accounts:
+  "175546642044":
+    filters:
+      IAMUser:
+        - "admin"
+      IAMUserPolicyAttachment:
+        - "admin -> AdministratorAccess"
+
+
+docker run \
+    --rm -it \
+    -v /Users/rbhar1/self/aws/nuke-config.yaml:/home/aws-nuke/config.yml \
+    -v /Users/rbhar1/.aws:/home/aws-nuke/.aws \
+    quay.io/rebuy/aws-nuke:v2.11.0 \
+    --profile default \
+    --config /home/aws-nuke/config.yml
